@@ -1,3 +1,6 @@
+// 3. Init GitHub
+const github = new GitHub();
+
 //1. Search Input
 const searchUserInput = document.getElementById("searchUsers");
 
@@ -7,6 +10,17 @@ searchUserInput.addEventListener("keyup", e => {
   const userInputText = e.target.value;
 
   if (userInputText !== "") {
-    console.log(userInputText);
+    github.getUser(userInputText).then(userData => {
+      if (userData.userProfileData.message === "Not Found") {
+        //Show Alert
+        console.log("No User Found");
+      } else {
+        console.log(userData);
+        //Show Profile
+      }
+    });
+  } else {
+    console.log("Profile Cleard");
+    //Clear Pofile
   }
 });
