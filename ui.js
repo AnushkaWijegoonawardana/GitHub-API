@@ -70,10 +70,10 @@ class UI {
           <h3 class="car-title ">
             <a href="${repo.html_url}">${repo.name}</a>
           </h3>
-          <!-- <hr /> -->
           <p class="card-text">${repo.description}</p>
           <p class="card-text">Created at ${repo.created_at}</p>
           <p class="card-text">Last Update at ${repo.updated_at}</p>
+          <h6 class="card-text font-weight-bold"><a href="${repo.homepage}" target="_blank">Live Demo</h6>
         </div>
         <div class="col-md-4">
           <a href="${repo.git_url}" class="btn btn-block btn-primary"
@@ -84,12 +84,14 @@ class UI {
           >
         </div>
       </div>
-      <hr>
+      <hr />
       <div class="">
         <span class="badge badge-primary">Repo Size: ${repo.size}</span>
         <span class="badge badge-secondary">Watchers: ${repo.watchers}</span>
         <span class="badge badge-info">Forks: ${repo.forks}</span>
-        <span class="badge badge-primary">Open Issues: ${repo.open_issues}</span>
+        <span class="badge badge-primary"
+          >Open Issues: ${repo.open_issues}</span
+        >
       </div>
     </div>`;
     });
