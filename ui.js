@@ -101,7 +101,8 @@ class UI {
 
   clearProfile() {
     this.profile.innerHTML = "";
-    console.log("Profile Cleard");
+
+    // this.repooutput.innerHTML = "";
   }
 
   clearShowMessage() {
