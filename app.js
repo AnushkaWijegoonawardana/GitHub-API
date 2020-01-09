@@ -15,15 +15,15 @@ searchUserInput.addEventListener("keyup", e => {
     github.getUser(userInputText).then(userData => {
       if (userData.userProfileData.message === "Not Found") {
         //Show Alert
-        console.log("No User Found");
+        ui.showMeasage("No Users Found", "warning");
       } else {
-        // console.log(userData);
         //Show Profile
         ui.showProfile(userData.userProfileData);
+        ui.showRepos(userData.userReposData);
       }
     });
   } else {
-    console.log("Profile Cleard");
     //Clear Pofile
+    ui.clearProfile();
   }
 });
